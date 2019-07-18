@@ -1,0 +1,5 @@
+
+ 3 files changed, 2 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 ignore.txt.txt
+ create mode 100644 my_newfile.txt
