@@ -1,7 +1,6 @@
  node{    
      stage('Organise Files'){                         
-         steps{  
-                script{                        
+                                
                     File sourceFolder = new File("https://github.com/shailpandey/Dev_Project_repo/*");
                     File  destinationFolder = new File("https://github.com/shailpandey/1");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
@@ -11,8 +10,7 @@
                         if (file.isFile()) {
                             echo file.getName()                                                                
                             Files.copy(Paths.get(file.path), Paths.get("https://github.com/shailpandey/1"));                                   
-                        }
-                    }                  
+                                          
                 }                                
             }                           
         } 
