@@ -1,15 +1,28 @@
  node{    
-     stage('Organise Files'){                         
+     stage('Organise Files'){   
+     
+     echo ' this is 1....'
                                 
-                    File sourceFolder = new File("https://github.com/shailpandey/Dev_Project_repo/*");
-                    File  destinationFolder = new File("https://github.com/shailpandey/1");                                                   
-                    File[] listOfFiles = sourceFolder.listFiles();
-                    echo "Files Total: " + listOfFiles.length;  
+                  //  File sourceFolder = new File("https://github.com/shailpandey/Dev_Project_repo/*");
+                  //  File  destinationFolder = new File("https://github.com/shailpandey/1");                                                   
+                 //   File[] listOfFiles = sourceFolder.listFiles();
+                  //  echo "Files Total: " + listOfFiles.length;  
 
-                    for (File file : listOfFiles) {
-                        if (file.isFile()) {
-                            echo file.getName()                                                                
-                            Files.copy(Paths.get(file.path), Paths.get("https://github.com/shailpandey/1"));                                   
+                  //  for (File file : listOfFiles) {
+                    //    if (file.isFile()) {
+                   //         echo file.getName()                                                                
+                      //      Files.copy(Paths.get(file.path), Paths.get("https://github.com/shailpandey/1"));          
+                      
+                      
+                      echo ' this is 2......'
+                      
+                      def  FILES_LIST = sh (script: "ls   '${workers_dir}'", returnStdout: true).trim()
+//DEBUG
+echo "FILES_LIST : ${FILES_LIST}"
+//PARSING
+for(String ele : FILES_LIST.split("\\r?\\n")){ 
+   println ">>>${ele}<<<"     
+}
                                           
                 }                                
             }                           
