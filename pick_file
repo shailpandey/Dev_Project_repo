@@ -16,7 +16,7 @@
                       
                       echo ' this is 2......'
                       
-                      def  FILES_LIST = sh (script: "ls   '${workers_dir}'", returnStdout: true).trim()
+                      def  FILES_LIST = sh (script: "ls   '${"https://github.com/shailpandey/Dev_Project_repo/*"}'", returnStdout: true).trim()
 //DEBUG
 echo "FILES_LIST : ${FILES_LIST}"
 //PARSING
